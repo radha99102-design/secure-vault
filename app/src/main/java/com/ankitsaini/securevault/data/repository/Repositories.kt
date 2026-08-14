@@ -74,7 +74,7 @@ class SecurityRepository @Inject constructor(
 
 @Singleton
 class AppInfoRepository @Inject constructor(
-    private val context: Context,
+    @ApplicationContext private val context: Context,
     private val securityRepository: SecurityRepository
 ) {
     data class InstalledAppInfo(val packageName: String, val appName: String, val icon: Drawable?, val isSystemApp: Boolean, val isProtected: Boolean = false)
